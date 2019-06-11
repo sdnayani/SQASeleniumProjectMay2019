@@ -1,0 +1,35 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Parameterization Test Suite">
+	<test name="Test Login">
+	
+	<parameter name="sUsername" value="testuser"/>
+	<parameter name="sPassword" value="testpassword"/>
+	<classes>
+			 <class name = "com.facebook.tests.FirefoxTest">
+	           <methods>
+	               
+	                <include name="testUserLoginParamsUsinIdCss"/>
+	                  
+	                
+	                
+	           </methods>
+	         </class>
+			
+	 </classes>
+	</test>
+	<test name="Test Registration">
+	
+	<parameter name="sFirstName" value="testuser"/>
+	<parameter name="sLastName" value="testpassword"/>
+	<classes>
+			 <class name = "com.facebook.tests.FirefoxTest">
+	           <methods>
+	               
+	                <include name="testUserRegistration"/>
+	                
+	           </methods>
+	         </class>
+			
+	 </classes>
+	</test>
+</suite>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="SampleTests" verbose="10">
+
+ <!-- 
+<test name="Test Login">
+	
+	<parameter name="BrowserName" value="chrome"/>
+	<parameter name="HomePage" value="http://facebook.com"/>
+	<classes>
+			 <class name ="com.facebook.tests.TestHomePage">
+	           <methods>
+	               
+	               <include name="testFaceBookTitleOnPageLoad"/>
+	                              
+	           </methods>
+	         </class>
+			
+	 </classes>
+</test>
+-->
+<test name="Test New User Registration">
+	
+	<parameter name="BrowserName" value="chrome"/>
+	
+	<classes>
+			 <class name ="com.facebook.tests.TestUserRegistration">
+	           <methods>
+	               
+	               <include name="testNewUserRegistration"/>
+	                              
+	           </methods>
+	         </class>
+			
+	 </classes>
+</test>
+	
+</suite>

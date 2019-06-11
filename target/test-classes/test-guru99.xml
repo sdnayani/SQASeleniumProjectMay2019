@@ -1,0 +1,19 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Parameterization Test Suite">
+	<test name="Test Login">
+	
+	<parameter name="BrowserName" value="FireFox"/>
+	
+	<classes>
+			 <class name = "com.guru99.tests.Test99GuruHomePage">
+	           <methods>	               
+	                <include name="test_Home_Page_DashBoard_UserName"/>
+	                  
+	             
+	           </methods>
+	         </class>
+			
+	 </classes>
+	</test>
+	
+</suite>
