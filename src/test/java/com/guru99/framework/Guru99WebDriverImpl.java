@@ -74,7 +74,7 @@ public class Guru99WebDriverImpl implements Guru99WebDriver {
 
 		}
 
-		if (Browser.equals("FireFox") || (Browser.equals("firefox"))) {
+		if (Browser.equalsIgnoreCase("FireFox") || (Browser.equals("firefox"))) {
 			System.out.println("Comming in FireFox ");
 			if (OS.equals("Mac")){
 			    System.out.println("In Fire fox Driver and Mac " +UserDir + GlobalDataStore.GeckoDriver_MAC);

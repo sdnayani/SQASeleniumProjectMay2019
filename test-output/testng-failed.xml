@@ -3,11 +3,9 @@
 <suite name="Failed suite [Default suite]">
   <test name="Default test(failed)" preserve-order="true">
     <classes>
-      <class name="com.examples.selenium.locators.assertTable">
+      <class name="com.facebook.tests.seleniumTests">
         <methods>
-          <include name="testAssertTable"/>
-          <include name="tearDown"/>
-          <include name="setUp"/>
+          <include name="testUserLogin"/>
         </methods>
       </class>
     </classes>

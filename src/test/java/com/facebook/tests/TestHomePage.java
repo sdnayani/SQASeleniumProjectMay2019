@@ -121,15 +121,8 @@ public class TestHomePage {
 	  System.out.println(" The userName " +sUsername);
 	  System.out.println("The Password "+sPassword);
 	  FBPage= new FaceBookHomePage(driver);
-		FBPage.launchHomePage(HomePage);
-		//driver.findElement(By.xpath(".//input[@name='email']")).sendKeys(sUsername);
-		driver.findElement(By.id("email")).sendKeys(sUsername);
-		driver.findElement(By.id("pass")).sendKeys(sPassword);
-		driver.findElement(By.xpath(".//input[@name='pass']")).sendKeys(sPassword);
-		driver.findElement(By.name("email")).sendKeys(sUsername);
-	    //driver.findElement(By.name("pass")).sendKeys(sPassword);
-		driver.findElement(By.cssSelector("#email")).sendKeys(sUsername);
-	    //driver.findElement(By.name("pass")).sendKeys(sPassword);
+		FBPage.launchHomePage(HomePage);	
+		FBPage.loginToFaceBook(sUsername, sPassword);
         
   }
   

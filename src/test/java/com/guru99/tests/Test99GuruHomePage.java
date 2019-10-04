@@ -1,6 +1,7 @@
 package com.guru99.tests;
 
 import java.net.MalformedURLException;
+import java.util.ArrayList;
 
 import org.apache.log4j.Logger;
 
@@ -26,7 +27,7 @@ public class Test99GuruHomePage {
 	GlobalDataStore gds = new GlobalDataStore();
      String BankHomePage;
     Guru99LoginPage objLogin;
-     Boolean HomePageLaunch=false;
+    Boolean HomePageLaunch=false;
     Guru99HomePage objHomePage;
 
 
@@ -130,7 +131,9 @@ public class Test99GuruHomePage {
     	  if(HomePageLaunch==true){
     		  
        objHomePage.clickSeleniumDropDownOnPage();
-       objHomePage.clickSeleniumSelectElementFromDropDownOnPage("Flash");
+       ArrayList<String>list=new ArrayList<String>();
+       list.add("Flash");
+       objHomePage.clickSeleniumSelectElementFromDropDownOnPage(list);
        String Url=driver.getCurrentUrl();
        Url=Url.trim();
        System.out.println(" The url " +Url);
@@ -142,7 +145,16 @@ public class Test99GuruHomePage {
  // Assert.assertTrue(objHomePage.getHomePageDashboardUserName().toLowerCase().contains("manger id : mgr123"));
   }
    
-    
+    @Test
+    public void testGuru99CountAllEllements(){
+    	if(HomePageLaunch==true){
+    		objHomePage.clickSeleniumDropDownOnPage();
+    	      int actual= objHomePage.getCountOfAllLinks();
+    	      int expected=19;
+    	      Assert.assertEquals(actual, expected);
+    	}
+    	
+    }
     
     @Test
     public void testGuru99TextItems(){

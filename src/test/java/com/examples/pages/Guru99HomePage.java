@@ -1,5 +1,6 @@
 package com.examples.pages;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.log4j.Logger;
@@ -115,11 +116,32 @@ public void setWebDriver(Guru99WebDriverImpl webDriver) {
     	
     }
     
-    public void clickSeleniumSelectElementFromDropDownOnPage(String Text){
-   String Path= 	"//ul[@class='nav navbar-nav']/li[1]/ul//a[contains(text()," + "'"+Text+ "'" +")]";
-   By checkText=By.xpath(Path);
- 	   WebElement element= driver.FindElement(checkText);
- 		   driver.clickElement(element);
+    public ArrayList<String> getCountOfAllLinksText(){
+    	ArrayList<String >allElements= new ArrayList<String>();
+    	WebElement element= driver.FindElement(checkSeleniumDropDown);
+ 	   
+		   driver.clickElement(element);
+		    List<WebElement>elements= driver.findElements(checkSiblings);
+		    for(WebElement element1:elements) {
+		    	System.out.println("The elements Size " +element1.getText());
+		    	allElements.add(element1.getText());
+		    }
+		    return allElements;
+		    
+    	
+    }
+    
+    public void clickSeleniumSelectElementFromDropDownOnPage(ArrayList<String> elements){
+    	for(String Text:elements) {
+    	 	//"//ul[@class='nav navbar-nav']/li[1]/ul//a[contains(text(),'Flash')]";
+    		   String Path= 	"//ul[@class='nav navbar-nav']/li[1]/ul//a[contains(text()," + "'"+Text+ "'" +")]";
+    		   By checkText=By.xpath(Path);
+    		 	   WebElement element= driver.FindElement(checkText);
+    		 		   driver.clickElement(element);
+    		
+    	}
+    	
+   
  	   }
     
         public Boolean init() {

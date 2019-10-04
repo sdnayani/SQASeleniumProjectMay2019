@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <suite name="SampleTests" verbose="10">
 
- <!-- 
-<test name="Test Login">
+ <!--  
+<test name="Test HomePageLoad">
 	
 	<parameter name="BrowserName" value="chrome"/>
 	<parameter name="HomePage" value="http://facebook.com"/>
@@ -17,7 +17,26 @@
 			
 	 </classes>
 </test>
+
 -->
+<test name="TestLogin">
+	
+	<parameter name="BrowserName" value="firefox"/>
+	<parameter name="HomePage" value="http://facebook.com"/>
+	<parameter name="sUsername" value="hello"/>
+	<parameter name="sPassword" value="world"/>
+	<classes>
+			 <class name ="com.facebook.tests.TestHomePage">
+	           <methods>
+	               
+	               <include name="testUserLogin"/>
+	                              
+	           </methods>
+	         </class>
+			
+	 </classes>
+</test>
+<!--  
 <test name="Test New User Registration">
 	
 	<parameter name="BrowserName" value="chrome"/>
@@ -33,5 +52,5 @@
 			
 	 </classes>
 </test>
-	
+	-->
 </suite>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite verbose="10" name="Failed suite [SampleTests]">
+  <parameter name="BrowserName" value="chrome"/>
+  <parameter name="HomePage" value="http://facebook.com"/>
+  <test name="Test HomePageLoad(failed)" preserve-order="true">
+    <parameter name="BrowserName" value="chrome"/>
+    <parameter name="HomePage" value="http://facebook.com"/>
+    <classes>
+      <class name="com.facebook.tests.TestHomePage">
+        <methods>
+          <include name="setUp"/>
+          <include name="testFaceBookTitleOnPageLoad"/>
+        </methods>
+      </class>
+    </classes>
+  </test>
+</suite>

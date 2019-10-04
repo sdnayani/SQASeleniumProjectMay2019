@@ -1,5 +1,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Parameterization Test Suite">
+
+  
 	<test name="Test Login">
 	
 	<parameter name="sUsername" value="testuser"/>
@@ -17,6 +19,7 @@
 			
 	 </classes>
 	</test>
+	
 	<test name="Test Registration">
 	
 	<parameter name="sFirstName" value="testuser"/>

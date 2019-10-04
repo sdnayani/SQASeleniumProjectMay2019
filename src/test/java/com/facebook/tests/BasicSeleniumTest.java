@@ -13,8 +13,6 @@ import org.testng.annotations.Test;
 public class BasicSeleniumTest {
 	
 
-	
-
 	@Test
 	public static void basicTest() {
 		

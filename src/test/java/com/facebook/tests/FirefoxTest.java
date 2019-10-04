@@ -46,7 +46,7 @@ public class FirefoxTest {
 	
 	
 
-	@Test
+	@Test(enabled=false)
 	public  void basicTest() {
 			 
 		// launch Fire fox and direct it to the Base URL
@@ -60,22 +60,24 @@ public class FirefoxTest {
 
 		 Assert.assertEquals(expectedTitle, actualTitle);
 		// close Fire fox
-		driver.close();
+		//driver.close();
 
 	}
 
 
-	@Test
-	public void testUserLogin(){
+	@Test(enabled=false)
+	public void testUserLogin() throws InterruptedException{
+		
 		
 		driver.get(HomePage);
 		driver.manage().window().maximize();
-		driver.findElement(By.xpath("//input[@id='email']")).sendKeys("Hello");
-		
+		//driver.findElement(By.xpath("//input[@id='email']")).sendKeys("Hello");
+		driver.findElement(By.cssSelector("input[name='email']")).sendKeys("Helloworld");
+		  Thread.sleep(6000);
 		driver.findElement(By.xpath("//input[@id='pass']")).sendKeys("World");
 	}
 	
-	@Test
+	@Test(enabled=false)
 	@Parameters({"sUsername","sPassword"})
 	public void testUserLoginParams(String sUserName,String sPassword){
 		
@@ -87,7 +89,7 @@ public class FirefoxTest {
 	}
 	
 	
-	@Test
+	@Test(enabled=true)
 	@Parameters({"sUsername","sPassword"})
 	public void testUserLoginParamsUsinIdCss(String sUserName,String sPassword){
 		
@@ -98,7 +100,7 @@ public class FirefoxTest {
 		driver.findElement(By.cssSelector("#pass")).sendKeys(sPassword);
 	}
 
-	  @Test
+	  @Test(enabled=false)
 	  @Parameters({"sFirstName","sLastName"})
 	  public void testUserRegistration(String sFirstName, String sLastName) {
 		driver.get(HomePage);
@@ -109,14 +111,15 @@ public class FirefoxTest {
 		driver.findElement(By.name("firstname")).sendKeys(sFirstName);
 		driver.findElement(By.name("lastname")).sendKeys(sLastName);
 	    driver.findElement(By.name("reg_email__")).sendKeys("888-99-8888");
-	    driver.findElement(By.xpath("//button[contains(text(),'Sign Up')]")).click();
+	   // driver.findElement(By.xpath("//button[contains(text(),'Sign Up')]")).click();
+	    driver.findElement(By.xpath("//button[text()='Sign Up']")).click();
 	}		
 	    
 	
 	
 	@AfterClass
 	public void closeBrowser() {
-		driver.close();
+		driver.quit();
 	}
 
 }
